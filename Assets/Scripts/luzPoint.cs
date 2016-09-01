@@ -20,6 +20,7 @@ public class luzPoint : MonoBehaviour {
 		foreach (Collider i in allInimigos) {
 			if (i.transform.tag == "Monstro") {
 				Monstro monstro = i.gameObject.GetComponent<Monstro> ();
+				if(monstro != null)
 				monstro.iluminado = true;
 			}
 		}
