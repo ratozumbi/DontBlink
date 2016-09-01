@@ -9,6 +9,12 @@ TagManager:
   - Monstro
   - Vidro
   - Luz
+  - MADEIRA
+  - GRAMA
+  - TERRA
+  - CIMENTO
+  - METAL
+  - AGUA
   layers:
   - Default
   - TransparentFX
