@@ -39,8 +39,8 @@ public class PlayerMove : MonoBehaviour {
 			return;
 		}
 
-		GameObject go = GameObject.Find ("texto");
-		TextMesh tx = go.GetComponent<TextMesh> ();
+		//GameObject go = GameObject.Find ("texto");
+		//TextMesh tx = go.GetComponent<TextMesh> ();
 
 
 		Vector3 direction = new Vector3(head.transform.forward.x, 0, head.transform.forward.z).normalized * speed * Time.deltaTime * Input.GetAxis(vertical) * invertY;
@@ -50,7 +50,7 @@ public class PlayerMove : MonoBehaviour {
 		direction = new Vector3(head.transform.right.x, 0, head.transform.right.z).normalized * speed * Time.deltaTime * Input.GetAxis(horizontal) * invertX;
 		rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
 		controller.Move(rotation * direction);
-		tx.text = invertY +" \n "+ invertX; 
+		//tx.text = invertY +" \n "+ invertX; 
 		//gravidade
 
 		if (controller.isGrounded) {

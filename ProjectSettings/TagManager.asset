@@ -3,18 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - camL
-  - camR
-  - Monstro
-  - Vidro
-  - Luz
-  - MADEIRA
-  - GRAMA
-  - TERRA
-  - CIMENTO
-  - METAL
-  - AGUA
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -24,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - LayerInimigo
+  - 
   - 
   - 
   - 
