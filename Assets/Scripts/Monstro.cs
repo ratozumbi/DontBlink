@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Monstro : MonoBehaviour {
 	
+	public bool iluminadoForce = false;
+	[HideInInspector]
 	public bool iluminado = false;
+	private bool podeRodar = false;
 
 	private bool possivelVer = false;
 	private GameObject player;
@@ -51,20 +54,26 @@ public class Monstro : MonoBehaviour {
 			} 
 		}
 
-
+		//calcula a rotacao da estatua
+		Vector3 lookPos = player.GetComponent<Transform>().position - transform.position;
+		Quaternion viradinhaMalandra = new Quaternion (0, -1, 0, 1);//isso esta aqui pq o look at acha que a lateral da estatua eh pra frente, dai compenso dando uam girada.
+		lookPos.y = 0;
+		Quaternion rotation = Quaternion.LookRotation (lookPos) * viradinhaMalandra;
 
 		Debug.DrawLine (transform.position, player.transform.position);
 
 		if (iluminado && myRenderer.isVisible && possivelVer) {//caso willRender e !possivelVer : vai ser possivel ver a sombra do bixo mexendo. Não sei se é uma feature ou bug.
 			myAgent.SetDestination (transform.position);
 			myAgent.Stop();
+			podeRodar = true;
 		} else {
 			myAgent.Resume();
+			if(podeRodar)
+				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, 1);
 			myAgent.SetDestination (player.transform.position);
 		}
-
 		possivelVer = false;
-		iluminado = false;
+		iluminado = iluminadoForce;
 	}
 
 	void OnTriggerEnter(Collider col)
