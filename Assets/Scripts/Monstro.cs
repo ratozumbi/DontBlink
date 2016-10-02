@@ -24,14 +24,15 @@ public class Monstro : MonoBehaviour {
 		player = GameObject.FindWithTag ("Player");
 	}
 
-	// Update is called once per frame
+
 	void Update () {
 
 		Vector3 viewPort = camL.WorldToViewportPoint(myRenderer.bounds.center);
 		Ray ray = camL.ViewportPointToRay(viewPort);
 		RaycastHit hit;
 		if (myRenderer.bounds.IntersectRay (ray)) {
-			if (Physics.Raycast (ray, out hit)) {
+			if (Physics.Raycast (ray, out hit))
+			{
 				if (hit.transform.tag == "Monstro" || hit.transform.tag == "Vidro") {
 					if (myRenderer.bounds.IntersectRay (ray)) {
 						possivelVer = true;
@@ -39,7 +40,6 @@ public class Monstro : MonoBehaviour {
 				} 
 			}		
 		}
- 
 			
 		viewPort = camR.WorldToViewportPoint(myRenderer.bounds.center);
 		ray = camR.ViewportPointToRay (viewPort);
@@ -59,8 +59,6 @@ public class Monstro : MonoBehaviour {
 		Quaternion viradinhaMalandra = new Quaternion (0, -1, 0, 1);//isso esta aqui pq o look at acha que a lateral da estatua eh pra frente, dai compenso dando uam girada.
 		lookPos.y = 0;
 		Quaternion rotation = Quaternion.LookRotation (lookPos) * viradinhaMalandra;
-
-		Debug.DrawLine (transform.position, player.transform.position);
 
 		if (iluminado && myRenderer.isVisible && possivelVer) {//caso willRender e !possivelVer : vai ser possivel ver a sombra do bixo mexendo. Não sei se é uma feature ou bug.
 			myAgent.SetDestination (transform.position);
