@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 [RequireComponent(typeof(AudioSource))]
 public class PORTA : MonoBehaviour {
 	public bool EstaTrancada,PrecisaDeChave;
@@ -11,7 +13,7 @@ public class PORTA : MonoBehaviour {
 	public int IDdaPorta;
 	public static List<int> ListaDeIDs = new List<int>(); // LISTA DE CHAVES QUE O PLAYER CONTEM
 	private bool MovimentarPorta, EstaAberta,PodeAbrir,AvisoTrancada,temAChave;
-	private float CronometroDoAviso,CronometroMovimento;
+	private float CronometroDoAviso,CronometroMovimento,CronometroNextLevel;
 	private float RotacaoFechada,RotacaoAberta;
 	private GameObject Jogador;
 	void Start (){
@@ -96,6 +98,19 @@ public class PORTA : MonoBehaviour {
 		if (MovimentarPorta == true && EstaAberta == false) {
 			Vector3 rotacaoFinal = new Vector3(0,RotacaoAberta,0);
 			transform.eulerAngles = Vector3.Lerp (transform.eulerAngles,rotacaoFinal,Time.deltaTime*(VelocidadeDeGiro/50));
+
+			CronometroNextLevel += Time.deltaTime;
+
+			if (CronometroNextLevel >= 2) {
+				CronometroNextLevel = 0;
+
+				int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+				if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
+				{
+					SceneManager.LoadScene(nextSceneIndex);
+				}
+
+			}
 		}
 		// MOVIMENTO DE FECHAR A PORTA
 		else if (MovimentarPorta == true && EstaAberta == true) {
@@ -109,10 +124,10 @@ public class PORTA : MonoBehaviour {
 		GUI.skin.label.fontSize = Screen.height / 20;
 		if (AvisoTrancada == true) {
 			if(PrecisaDeChave == true){
-				GUI.Label(new Rect(Screen.width/2-Screen.width/5,Screen.height/2-Screen.height/16,Screen.width/2.5f,Screen.height/8),"Voce precisa de uma chave"); 
+				GUI.Label(new Rect(Screen.width/2-Screen.width/5,Screen.height/2-Screen.height/16,Screen.width/2.5f,Screen.height/8),""); 
 			}
 			else if(PrecisaDeChave == false){
-				GUI.Label(new Rect(Screen.width/2-Screen.width/5,Screen.height/2-Screen.height/16,Screen.width/2.5f,Screen.height/8),"Nunca ira abrir"); 
+				GUI.Label(new Rect(Screen.width/2-Screen.width/5,Screen.height/2-Screen.height/16,Screen.width/2.5f,Screen.height/8),""); 
 			}
 		}
 	}
