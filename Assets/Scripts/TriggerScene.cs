@@ -5,7 +5,7 @@ using System.Collections;
 public class TriggerScene : MonoBehaviour {
 
 	private bool jobDone = false;
-	public string sceneToLoad = "";
+	//public string sceneToLoad = "";
 	// Use this for initialization
 	void Start () {
 
@@ -20,7 +20,7 @@ public class TriggerScene : MonoBehaviour {
 	{
 		if (!jobDone && other.tag == "Player") {
 			jobDone = true;
-			SceneManager.LoadScene(sceneToLoad);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
 		}
 	}

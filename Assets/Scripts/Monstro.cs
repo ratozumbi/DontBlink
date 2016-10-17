@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Monstro : MonoBehaviour {
@@ -79,6 +80,11 @@ public class Monstro : MonoBehaviour {
 		if (col.gameObject.tag == "luz") {
 			iluminado = true;
 		}
+		if (col.gameObject.tag == "Player") {
+			//if (!(iluminado || myRenderer.isVisible ||   possivelVer))
+				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
+
 	}
 
 }
