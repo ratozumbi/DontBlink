@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class trigger : MonoBehaviour {
+public class triggerMonstro : MonoBehaviour {
 
 	public GameObject inimigo;
 	private bool jobDone = false;

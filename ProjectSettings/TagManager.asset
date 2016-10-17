@@ -9,6 +9,7 @@ TagManager:
   - Luz
   - camL
   - camR
+  - TochaPlayer
   layers:
   - Default
   - TransparentFX
