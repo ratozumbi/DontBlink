@@ -30,7 +30,7 @@ public class ReceptorDeLuz : MonoBehaviour {
 			case 1:
 				GameObject.Find ("Portao1").GetComponent<SobePortao> ().ativar = true;
 				monstro = GameObject.FindGameObjectWithTag ("MonstroEscuro");
-				scriptMonstro= monstro.AddComponent<MonstroEscuro> () as MonstroEscuro;
+				monstro.AddComponent<MonstroEscuro> ();
 				break;
 			case 2:
 				GameObject.Find ("Portao2").GetComponent<SobePortao> ().ativar = true;
@@ -42,6 +42,7 @@ public class ReceptorDeLuz : MonoBehaviour {
 				GameObject.Find ("Portao4").GetComponent<SobePortao> ().ativar = true;
 				break;
 			case 5:
+				scriptMonstro = monstro.GetComponent<MonstroEscuro> ();
 				scriptMonstro.podeMorrer = true;
 				break;
 			}

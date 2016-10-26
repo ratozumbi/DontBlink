@@ -13,6 +13,8 @@ public class MonstroEscuro : MonoBehaviour {
 	[HideInInspector]
 	public bool iluminado = false;
 
+	public LayerMask layerAIgnorar;
+
 	private bool podeRodar = false;
 
 	private bool morrendo = false;
@@ -68,11 +70,12 @@ public class MonstroEscuro : MonoBehaviour {
 		Ray ray = camL.ViewportPointToRay(viewPort);
 		RaycastHit hit;
 		if (myRenderer.bounds.IntersectRay (ray)) {
-			if (Physics.Raycast (ray, out hit))
+			if (Physics.Raycast (ray, out hit, 100f, LayerMask.NameToLayer("Ignore Raycast")))
 			{
-				if (hit.transform.tag == "MonstroEscuro" || hit.transform.tag == "Monstro" || hit.transform.tag == "Vidro") {
+				if (hit.transform.tag == "MonstroEscuro" || hit.transform.tag == "Monstro" ) {
 					if (myRenderer.bounds.IntersectRay (ray)) {
 						possivelVer = true;
+						goto skipEye;
 					}
 				} 
 			}		
@@ -81,15 +84,16 @@ public class MonstroEscuro : MonoBehaviour {
 		ray = camR.ViewportPointToRay (viewPort);
 		hit = new RaycastHit();
 		if (myRenderer.bounds.IntersectRay (ray)) {
-			if (Physics.Raycast (ray, out hit)) {
-				Debug.Log (hit.transform.name);
-				if (hit.transform.tag == "MonstroEscuro" || hit.transform.tag == "Monstro" || hit.transform.tag == "Vidro") {
+			if (Physics.Raycast (ray, out hit, 100f, LayerMask.NameToLayer("Ignore Raycast"))) 
+			{
+				if (hit.transform.tag == "MonstroEscuro" || hit.transform.tag == "Monstro") {
 					if (myRenderer.bounds.IntersectRay (ray)) {
 						possivelVer = true;
 					}
 				} 
 			} 
 		}
+		skipEye:
 
 		//controle para dar tempo da estatua ficar parada quando pega o player
 		if (contadorEstatico > 0) {
@@ -103,13 +107,13 @@ public class MonstroEscuro : MonoBehaviour {
 			myLight.intensity = 0;
 			//update para ver se o player esta perto
 			if (Vector3.Distance (transform.position, player.transform.position) <= triggerDistance) {
-				luzPlayer.range = luzPlayer.range > 0 ? luzPlayer.range - 1 : luzPlayer.range;
+				luzPlayer.range --;
 				triggerDistance = luzPlayer.range;
 				if (triggerDistance < 2)
 					MataPlayer ();
 				iluminadoForce = true;
 				contadorEstatico = timerEstatico;
-				myAudioSource.PlayOneShot (listAudio [6 - ((int)triggerDistance - 2)]);
+				myAudioSource.PlayOneShot (listAudio [0]);
 			} else 
 			{
 				iluminadoForce = false;
@@ -118,7 +122,7 @@ public class MonstroEscuro : MonoBehaviour {
 			}
 		}
 			
-		bool anda = true;
+ 		bool anda = true;
 
 		if (iluminado && (myRenderer.isVisible && possivelVer) || ignoreVisibleCondition) {
 			anda = false;

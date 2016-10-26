@@ -396,6 +396,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &50220251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50220246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188dcfc24043352489506c37a8493f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &59256436 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011070374628, guid: 49994b48fcd8fc447aac9bbccf66b0d6,
@@ -475,6 +486,14 @@ Prefab:
     - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_TagString
+      value: Luz
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461630, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
@@ -1922,6 +1941,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
   m_IsPrefabParent: 0
@@ -2522,6 +2545,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_TagString
+      value: Luz
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461630, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
@@ -2905,6 +2936,14 @@ Prefab:
       propertyPath: m_Name
       value: pentagrama
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 35f2613199d5264428eb675d3721bf4c, type: 3}
+      propertyPath: m_TagString
+      value: Vidro
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 35f2613199d5264428eb675d3721bf4c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 35f2613199d5264428eb675d3721bf4c, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 35f2613199d5264428eb675d3721bf4c, type: 3}
@@ -2920,7 +2959,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 688445197}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
@@ -3030,7 +3069,6 @@ GameObject:
   - 23: {fileID: 707898853}
   - 108: {fileID: 707898859}
   - 82: {fileID: 707898855}
-  - 114: {fileID: 707898860}
   m_Layer: 0
   m_Name: inimigoEstatua
   m_TagString: MonstroEscuro
@@ -3192,7 +3230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707898852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.47, y: -4.14, z: 52.67}
+  m_LocalPosition: {x: -43.03, y: -4.14, z: 52.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -3233,22 +3271,6 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &707898860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 707898852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e940de2a0edc124796abb2522a4a3d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerEstatico: 5
-  iluminadoForce: 1
-  ignoreVisibleCondition: 1
-  iluminado: 0
-  podeMorrer: 1
 --- !u!1001 &718540232
 Prefab:
   m_ObjectHideFlags: 0
@@ -3564,6 +3586,10 @@ Prefab:
       propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
   m_IsPrefabParent: 0
@@ -3723,6 +3749,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &826235998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826235993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188dcfc24043352489506c37a8493f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &840427935
 Prefab:
   m_ObjectHideFlags: 0
@@ -4589,6 +4626,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_TagString
+      value: Luz
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461630, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
@@ -4616,10 +4661,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1030903685}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1049786226
 GameObject:
@@ -4653,7 +4698,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4923,6 +4968,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_TagString
+      value: Luz
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461630, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
@@ -4950,7 +5003,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1094344512}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
@@ -5647,6 +5700,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_TagString
+      value: Luz
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461630, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
@@ -5851,6 +5912,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1256115511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256115506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188dcfc24043352489506c37a8493f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1263781036
 Prefab:
   m_ObjectHideFlags: 0
@@ -6800,6 +6872,10 @@ Prefab:
     - target: {fileID: 10874812, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
@@ -9419,6 +9495,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2041900948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041900943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188dcfc24043352489506c37a8493f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2044514843
 Prefab:
   m_ObjectHideFlags: 0
@@ -9567,6 +9654,10 @@ Prefab:
     - target: {fileID: 10874812, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
       propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115938, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93e0deb41fc0aca408f0c117e16b9d7c, type: 2}

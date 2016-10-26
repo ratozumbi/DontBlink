@@ -10,9 +10,25 @@
       <File FileName="Assets\Scripts\fading.cs" Line="6" Column="23" />
       <File FileName="Assets\Cardboard\Scripts\Cardboard.cs" Line="375" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>hit.trasform.name</Value>
+          <Value>hit.transform.tag</Value>
+          <Value>hit.transform.name</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\luzPoint.cs" line="29" column="1" />
+      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="127" column="1" />
+      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="87" column="1" />
+      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="75" column="1" />
+      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="72" column="1" />
+      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="86" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
