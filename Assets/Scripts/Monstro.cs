@@ -17,6 +17,12 @@ public class Monstro : MonoBehaviour {
 
 	private NavMeshAgent myAgent;
 	private Renderer myRenderer;
+
+	public AudioClip PertoDoPlayer, MorteDoPlayer;
+
+	private float CronometroNextLevel;
+	public GameObject Player;
+
 	void Start() {
 		camL = GameObject.FindGameObjectWithTag ("camL").GetComponent<Camera> ();
 		camR = GameObject.FindGameObjectWithTag ("camR").GetComponent<Camera> ();
@@ -65,6 +71,7 @@ public class Monstro : MonoBehaviour {
 			myAgent.SetDestination (transform.position);
 			myAgent.Stop();
 			podeRodar = true;
+			gameObject.GetComponent<AudioSource>().Play();
 		} else {
 			myAgent.Resume();
 			if(podeRodar)
@@ -82,9 +89,18 @@ public class Monstro : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "Player") {
 			//if (!(iluminado || myRenderer.isVisible ||   possivelVer))
-				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			StartCoroutine(ReiniciaLevel());
 		}
+	}
 
+	IEnumerator ReiniciaLevel(){
+		CharacterController cc = Player.GetComponent<CharacterController> ();
+		cc.enabled = false;
+
+		GetComponent<AudioSource>().PlayOneShot(MorteDoPlayer);
+		yield return new WaitForSeconds(5);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		yield break;
 	}
 
 }
