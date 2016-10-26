@@ -10,6 +10,8 @@ TagManager:
   - camL
   - camR
   - TochaPlayer
+  - Fire
+  - MonstroEscuro
   layers:
   - Default
   - TransparentFX

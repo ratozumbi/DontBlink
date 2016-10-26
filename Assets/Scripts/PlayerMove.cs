@@ -39,10 +39,6 @@ public class PlayerMove : MonoBehaviour {
 			return;
 		}
 
-		//GameObject go = GameObject.Find ("texto");
-		//TextMesh tx = go.GetComponent<TextMesh> ();
-
-
 		Vector3 direction = new Vector3(head.transform.forward.x, 0, head.transform.forward.z).normalized * speed * Time.deltaTime * Input.GetAxis(vertical) * invertY;
 		Quaternion rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
 		controller.Move(rotation * direction);

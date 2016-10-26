@@ -21,7 +21,12 @@ public class luzPoint : MonoBehaviour {
 			if (i.transform.tag == "Monstro") {
 				Monstro monstro = i.gameObject.GetComponent<Monstro> ();
 				if(monstro != null)
-				monstro.iluminado = true;
+					monstro.iluminado = true;
+			}
+			if (i.transform.tag == "MonstroEscuro") {
+				MonstroEscuro monstroes = i.gameObject.GetComponent<MonstroEscuro> ();
+				if(monstroes != null)
+					monstroes.iluminado = true;
 			}
 		}
 
