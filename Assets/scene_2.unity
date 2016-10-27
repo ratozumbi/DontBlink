@@ -1839,7 +1839,7 @@ Camera:
     y: 0
     width: 0.5
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -2088,6 +2088,11 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 497801406}
+    - target: {fileID: 114000011047835518, guid: de3b81e466abfa144a04b9addf15cf07,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de3b81e466abfa144a04b9addf15cf07, type: 2}
   m_IsPrefabParent: 0
@@ -3792,7 +3797,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -5869,7 +5874,7 @@ Camera:
     y: 0
     width: 0.5
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
