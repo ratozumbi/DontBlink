@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour {
 
 	void Update ()
 	{
+		#if (!UNITY_STANDALONE_WIN && UNITY_EDITOR)
 		//enquanto o player nao apertar para frente, não se mexe
 		//esses ifs serve pra mapear o controle caso esteja invertido
 		if (vertical == "") {
@@ -38,10 +39,6 @@ public class PlayerMove : MonoBehaviour {
 			}
 			return;
 		}
-
-		//GameObject go = GameObject.Find ("texto");
-		//TextMesh tx = go.GetComponent<TextMesh> ();
-
 
 		Vector3 direction = new Vector3(head.transform.forward.x, 0, head.transform.forward.z).normalized * speed * Time.deltaTime * Input.GetAxis(vertical) * invertY;
 		Quaternion rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
@@ -65,8 +62,9 @@ public class PlayerMove : MonoBehaviour {
 
 		}
 		gravidade = gravidade + Physics.gravity;
-		controller.Move(gravidade * Time.deltaTime);
 
+		controller.Move(gravidade * Time.deltaTime);
+		#endif
 
 	}
 		

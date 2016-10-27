@@ -1545,6 +1545,7 @@ GameObject:
   - 114: {fileID: 497801409}
   - 143: {fileID: 497801408}
   - 114: {fileID: 497801407}
+  - 114: {fileID: 497801411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1622,6 +1623,25 @@ Transform:
   - {fileID: 1754840932}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &497801411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 497801406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7074f19adc9f284bb163b939a3ddc33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 0
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
+  speed: 3
 --- !u!1001 &516981797
 Prefab:
   m_ObjectHideFlags: 0

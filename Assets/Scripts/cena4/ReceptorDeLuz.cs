@@ -51,7 +51,7 @@ public class ReceptorDeLuz : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{ 
 
-		#if(UNITY_EDITOR)
+		#if(UNITY_EDITOR || UNITY_STANDALONE_WIN)
 
 		receiveCor();
 		#endif

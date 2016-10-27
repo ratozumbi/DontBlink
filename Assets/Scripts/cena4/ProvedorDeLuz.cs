@@ -23,7 +23,7 @@ public class ProvedorDeLuz : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 
-		#if(UNITY_EDITOR)
+		#if(UNITY_EDITOR || UNITY_STANDALONE_WIN)
 
 		sendCor();
 		#endif

@@ -18,7 +18,7 @@ public class triggerTocha : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		
-		#if(UNITY_EDITOR)
+		#if(OFF )
 
 		if (!jobDone && other.tag == "Player") {
 			jobDone = true;
@@ -37,7 +37,7 @@ public class triggerTocha : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (CustomInput.gatilhoJoystick())
+		if (CustomInput.gatilhoJoystick() || Input.GetKey(KeyCode.E))
 		{
 			GameObject tochaPlayer = GameObject.Find ("tochaPlayer");
 			if (!tochaPlayer)
