@@ -4,6 +4,7 @@ using System.Collections;
 public class MataODiabo : MonoBehaviour {
 
 	public bool podeMatar = false;
+	private bool umaVez = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,10 +17,18 @@ public class MataODiabo : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		if ((col.gameObject.tag == "MonstroEscuro" || col.gameObject.name == "inimigoEstatua") && podeMatar) {
+		if ((col.gameObject.tag == "MonstroEscuro" || col.gameObject.name == "inimigoEstatua") && podeMatar && !umaVez) {
+			umaVez = true;
 			col.gameObject.GetComponent<MonstroEscuro>().MataComFogo();
 		} 
 
+	}
+	void OnTriggerStay(Collider col)
+	{
+		if ((col.gameObject.tag == "MonstroEscuro" || col.gameObject.name == "inimigoEstatua") && podeMatar && !umaVez) {
+			umaVez = true;
+			col.gameObject.GetComponent<MonstroEscuro>().MataComFogo();
+		} 
 
 	}
 

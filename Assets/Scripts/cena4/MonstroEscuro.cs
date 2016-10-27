@@ -56,6 +56,7 @@ public class MonstroEscuro : MonoBehaviour {
 		listAudio [2] = (AudioClip)Resources.Load ("risadaLonga");
 		listAudio[3] = (AudioClip)Resources.Load("risadaMuitoDistorcida1");
 		listAudio[4] = (AudioClip)Resources.Load("risadaMuitoDistorcida2");
+		listAudio[5] = (AudioClip)Resources.Load("");
 
 	}
 
@@ -131,7 +132,7 @@ public class MonstroEscuro : MonoBehaviour {
 				if (triggerDistance < 2)
 					MataPlayer ();
 				contadorEstatico = timerEstatico;
-				int rand = Random.Range (0, listAudio.Length);
+				int rand = Random.Range (0, 5);
 				myAudioSource.PlayOneShot(listAudio [rand],1f);
 			} else 
 			{
@@ -195,7 +196,20 @@ public class MonstroEscuro : MonoBehaviour {
 		podeRodar = true;
 	}
 	void MataPlayer(){
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);	
+		StartCoroutine(ReiniciaLevel());
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);	
+	}
+
+	IEnumerator ReiniciaLevel(){
+		CharacterController cc = player.GetComponent<CharacterController> ();
+		cc.enabled = false;
+
+		float fadetime = GameObject.Find ("_GM").GetComponent<fading> ().BeginFade (1);;
+
+		GetComponent<AudioSource>().PlayOneShot(listAudio[5]);
+		yield return new WaitForSeconds(5);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		yield break;
 	}
 
 
