@@ -97,6 +97,8 @@ public class Monstro : MonoBehaviour {
 		CharacterController cc = Player.GetComponent<CharacterController> ();
 		cc.enabled = false;
 
+		float fadetime = GameObject.Find ("_GM").GetComponent<fading> ().BeginFade (1);;
+
 		GetComponent<AudioSource>().PlayOneShot(MorteDoPlayer);
 		yield return new WaitForSeconds(5);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
