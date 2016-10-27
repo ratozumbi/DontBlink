@@ -13,9 +13,9 @@ public class MonstroEscuro : MonoBehaviour {
 	[HideInInspector]
 	public bool iluminado = false;
 
-	public LayerMask layerAIgnorar;
-
 	private bool podeRodar = false;
+	private bool anda = true;
+
 
 	private bool morrendo = false;
 	public bool podeMorrer = false;
@@ -51,18 +51,20 @@ public class MonstroEscuro : MonoBehaviour {
 		myLight = GetComponent<Light> ();
 
 		myAudioSource = GetComponent<AudioSource> ();
-		listAudio[0] = (AudioClip)Resources.Load("Sounds/risadaFina",typeof(AudioClip));
-		listAudio[1] = (AudioClip)Resources.Load("Sounds/risadaGrossa",typeof(AudioClip));
-		listAudio[2] = (AudioClip)Resources.Load("Sounds/risadaLonga",typeof(AudioClip));
-		listAudio[3] = (AudioClip)Resources.Load("Sounds/risadaMuitoDistorcida1",typeof(AudioClip));
-		listAudio[4] = (AudioClip)Resources.Load("Sounds/risadaMuitoDistorcida2",typeof(AudioClip));
+		listAudio[0] = (AudioClip)Resources.Load("risadaFina");
+		listAudio[1] = (AudioClip)Resources.Load("risadaGrossa");
+		listAudio [2] = (AudioClip)Resources.Load ("risadaLonga");
+		listAudio[3] = (AudioClip)Resources.Load("risadaMuitoDistorcida1");
+		listAudio[4] = (AudioClip)Resources.Load("risadaMuitoDistorcida2");
 
 	}
 
 
 	void Update () {
-		if (morrendo)
+		if (morrendo) {
+			meuGargula.transform.Translate(new Vector3(0,-1,0) *Time.smoothDeltaTime);
 			return;
+		}
 		
 		//testa se tem algo no meio do caminho impedidno a visao
 		//rever esta logica, em um caso que o raio atinge um vidro, mas ainda tem uma parede até o player ele devia testar como FLASE. Mas hoje acontece como TRUE
@@ -70,7 +72,7 @@ public class MonstroEscuro : MonoBehaviour {
 		Ray ray = camL.ViewportPointToRay(viewPort);
 		RaycastHit hit;
 		if (myRenderer.bounds.IntersectRay (ray)) {
-			if (Physics.Raycast (ray, out hit, 100f, LayerMask.NameToLayer("Ignore Raycast")))
+			if (Physics.Raycast (ray, out hit, Mathf.Infinity, ~LayerMask.NameToLayer("Ignore Raycast")))
 			{
 				if (hit.transform.tag == "MonstroEscuro" || hit.transform.tag == "Monstro" ) {
 					if (myRenderer.bounds.IntersectRay (ray)) {
@@ -84,7 +86,7 @@ public class MonstroEscuro : MonoBehaviour {
 		ray = camR.ViewportPointToRay (viewPort);
 		hit = new RaycastHit();
 		if (myRenderer.bounds.IntersectRay (ray)) {
-			if (Physics.Raycast (ray, out hit, 100f, LayerMask.NameToLayer("Ignore Raycast"))) 
+			if (Physics.Raycast (ray, out hit, Mathf.Infinity, ~LayerMask.NameToLayer("Ignore Raycast")))
 			{
 				if (hit.transform.tag == "MonstroEscuro" || hit.transform.tag == "Monstro") {
 					if (myRenderer.bounds.IntersectRay (ray)) {
@@ -105,15 +107,16 @@ public class MonstroEscuro : MonoBehaviour {
 			myLight.intensity = (contadorEstatico * 1.7f);
 		} else {
 			myLight.intensity = 0;
+			myAudioSource.Stop ();
 			//update para ver se o player esta perto
 			if (Vector3.Distance (transform.position, player.transform.position) <= triggerDistance) {
 				luzPlayer.range --;
 				triggerDistance = luzPlayer.range;
 				if (triggerDistance < 2)
 					MataPlayer ();
-				iluminadoForce = true;
 				contadorEstatico = timerEstatico;
-				myAudioSource.PlayOneShot (listAudio [0]);
+				int rand = Random.Range (0, listAudio.Length);
+				myAudioSource.PlayOneShot(listAudio [rand],1f);
 			} else 
 			{
 				iluminadoForce = false;
@@ -121,8 +124,6 @@ public class MonstroEscuro : MonoBehaviour {
 
 			}
 		}
-			
- 		bool anda = true;
 
 		if (iluminado && (myRenderer.isVisible && possivelVer) || ignoreVisibleCondition) {
 			anda = false;
@@ -133,36 +134,38 @@ public class MonstroEscuro : MonoBehaviour {
 			Move ();
 		else
 			Para ();
-		
+
+		anda = false;
 		possivelVer = false;
 		iluminado = iluminadoForce;
 	}
 
 
+	void OnTriggerStay(Collider col)
+	{
+		if (col.gameObject.tag == "Player") {
+			if (anda)
+				MataPlayer ();
+		} 
+	}
 
 	void OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.tag == "luz") {
 			iluminado = true;
-		}
+		} 
 		if (col.gameObject.tag == "Player") {
-			if (!(iluminado && myRenderer.isVisible && possivelVer))
+			if (anda)
 				MataPlayer ();
-		}
-		if (col.gameObject.name == "pentagrama" && podeMorrer) {
-			myAudioSource.PlayOneShot (listAudio [5]);
+		} 
+		if (col.gameObject.tag == "Finish" /*&& podeMorrer*/) {
+			myAudioSource.PlayOneShot (listAudio [4]);
 			morrendo = true;
 			Destroy (this.gameObject, 5);
-			GameObject fire = Resources.Load ("Prefabs/fx_fire_g") as GameObject; 
-			fire.transform.SetParent (this.transform);
-		}
-
-	}
-
-	void OnTriggerStay(Collider col)
-	{
-		if (col.gameObject.name == "pentagrama" && podeMorrer) {
-			meuGargula.transform.Translate(new Vector3(0,-1,0) *Time.smoothDeltaTime);
+			GameObject fire = Instantiate (Resources.Load ("Prefabs/fx_fire_g", typeof(GameObject)), transform) as GameObject; 
+		} 
+		{
+			Debug.Log ("monstro colider" + col.gameObject.name);
 		}
 
 	}

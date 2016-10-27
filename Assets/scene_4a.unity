@@ -615,7 +615,7 @@ GameObject:
   - 4: {fileID: 129727277}
   - 33: {fileID: 129727279}
   - 23: {fileID: 129727278}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1146,7 @@ GameObject:
   - 4: {fileID: 220688063}
   - 33: {fileID: 220688065}
   - 23: {fileID: 220688064}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2445,7 +2445,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 856905445}
   - 95: {fileID: 623409097}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VelaX-Z+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2800,6 +2800,10 @@ Prefab:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 110892, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
   m_IsPrefabParent: 0
@@ -2938,7 +2942,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 35f2613199d5264428eb675d3721bf4c, type: 3}
       propertyPath: m_TagString
-      value: Vidro
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 35f2613199d5264428eb675d3721bf4c, type: 3}
       propertyPath: m_Layer
@@ -2962,8 +2966,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0.3}
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &694233809
 Prefab:
   m_ObjectHideFlags: 0
@@ -3115,8 +3119,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 2.3
+  m_Radius: 2
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!82 &707898855
@@ -3432,7 +3436,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 694492674}
   - 95: {fileID: 778872705}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VelaZ+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3914,7 +3918,7 @@ GameObject:
   - 4: {fileID: 863999750}
   - 33: {fileID: 863999752}
   - 23: {fileID: 863999751}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: kerze_oben_lo:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4303,6 +4307,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 110892, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
   m_IsPrefabParent: 0
@@ -4415,6 +4423,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
@@ -5227,7 +5239,7 @@ GameObject:
   - 4: {fileID: 1124458001}
   - 33: {fileID: 1124458003}
   - 23: {fileID: 1124458002}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: kerze_oben_lo:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5357,7 +5369,7 @@ GameObject:
   - 4: {fileID: 1152105629}
   - 33: {fileID: 1152105631}
   - 23: {fileID: 1152105630}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: kerze_oben_lo:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6178,7 +6190,7 @@ GameObject:
   - 4: {fileID: 1355647216}
   - 33: {fileID: 1355647218}
   - 23: {fileID: 1355647217}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: kerze_oben_lo:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6637,6 +6649,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
   m_IsPrefabParent: 0
@@ -6658,7 +6674,7 @@ GameObject:
   - 4: {fileID: 1430076166}
   - 33: {fileID: 1430076168}
   - 23: {fileID: 1430076167}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: kerze_oben_lo:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7095,7 +7111,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1513853192}
   - 95: {fileID: 1499371604}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: velaX-Z-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7149,7 +7165,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1106169606}
   - 95: {fileID: 1518846478}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VelaX+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7374,7 +7390,7 @@ GameObject:
   - 4: {fileID: 1571965332}
   - 33: {fileID: 1571965334}
   - 23: {fileID: 1571965333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7803,7 +7819,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1446738362}
   - 95: {fileID: 1653288932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VelaZ-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8155,6 +8171,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
   m_IsPrefabParent: 0
@@ -8407,6 +8427,10 @@ Prefab:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 110892, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
   m_IsPrefabParent: 0
@@ -8420,7 +8444,7 @@ GameObject:
   - 4: {fileID: 1858833971}
   - 33: {fileID: 1858833973}
   - 23: {fileID: 1858833972}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8855,6 +8879,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 110892, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f766cb0ed6750804ebf9a931fb5412f2, type: 2}
   m_IsPrefabParent: 0
@@ -9050,7 +9078,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1934671233}
   - 108: {fileID: 1934671234}
-  - 114: {fileID: 1934671235}
   m_Layer: 0
   m_Name: Point light
   m_TagString: TochaPlayer
@@ -9105,17 +9132,6 @@ Light:
   m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1934671235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1934671232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b4a0e136db00b478388cbdb446c1fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1947097040
 Prefab:
   m_ObjectHideFlags: 0
@@ -9171,6 +9187,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a69f3a27c6753d4bb2c68032af304de, type: 3}
   m_IsPrefabParent: 0
@@ -9188,7 +9208,7 @@ GameObject:
   - 4: {fileID: 1960585134}
   - 33: {fileID: 1960585136}
   - 23: {fileID: 1960585135}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
