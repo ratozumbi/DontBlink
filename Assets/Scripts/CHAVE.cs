@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+
 [RequireComponent(typeof(AudioSource))]
-public class CHAVE : MonoBehaviour {
+public class CHAVE : MonoBehaviour{
 	public int IDdaChave;
 	public float DistanciaDaChave = 3;
 	public AudioClip somChave;
@@ -13,7 +14,7 @@ public class CHAVE : MonoBehaviour {
 	}
 	void Update () {
 		if (Vector3.Distance (transform.position, Jogador.transform.position) < DistanciaDaChave) {
-			if (Input.GetKeyDown ("e") && PegouChave == false) {
+			if ( (CustomInput.gatilhoJoystick() ||Input.GetKeyDown ("e")) && PegouChave == false) {
 				PORTA.ListaDeIDs.Add (IDdaChave);
 				PegouChave = true;
 				GetComponent<MeshRenderer> ().enabled = false;

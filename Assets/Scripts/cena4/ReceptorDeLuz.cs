@@ -42,7 +42,7 @@ public class ReceptorDeLuz : MonoBehaviour {
 				GameObject.Find ("Portao4").GetComponent<SobePortao> ().ativar = true;
 				break;
 			case 5:
-				GameObject.FindWithTag ("MonstroEscuro").GetComponent<MonstroEscuro> ().podeMorrer = true;
+				GameObject.FindWithTag ("Finish").GetComponent<MataODiabo> ().podeMatar = true;
 				break;
 			}
 		}

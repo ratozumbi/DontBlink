@@ -1,34 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Monstro.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\cena4\MonstroEscuro.cs">
     <Files>
-      <File FileName="Assets\Scripts\cena4\MonstroEscuro.cs" Line="153" Column="35" />
-      <File FileName="Assets\Scripts\PlayerMove.cs" Line="68" Column="1" />
-      <File FileName="Assets\Scripts\CHAVE.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AUDIOS.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Monstro.cs" Line="95" Column="2" />
-      <File FileName="Assets\Scripts\fading.cs" Line="6" Column="23" />
-      <File FileName="Assets\Cardboard\Scripts\Cardboard.cs" Line="375" Column="1" />
+      <File FileName="Assets\Scripts\cena4\MonstroEscuro.cs" Line="66" Column="51" />
+      <File FileName="Assets\Scripts\cena4\MataODiabo.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\luzPoint.cs" Line="29" Column="1" />
+      <File FileName="Assets\Scripts\cena4\triggerTocha.cs" Line="35" Column="9" />
+      <File FileName="Assets\Scripts\CustomInput.cs" Line="11" Column="47" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>hit.trasform.name</Value>
-          <Value>hit.transform.tag</Value>
-          <Value>hit.transform.name</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\luzPoint.cs" line="29" column="1" />
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="127" column="1" />
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="87" column="1" />
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="75" column="1" />
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="72" column="1" />
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\cena4\MonstroEscuro.cs" line="86" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

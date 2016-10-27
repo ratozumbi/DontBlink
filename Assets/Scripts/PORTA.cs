@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class PORTA : MonoBehaviour {
-	public bool EstaTrancada,PrecisaDeChave;
-	public AudioClip PortaNormal,PortaTrancada,SomDeChave;
+	public bool EstaTrancada,PrecisaDeChave,MudaDeCena = true;
+	private AudioClip PortaNormal,PortaTrancada,SomDeChave;
 	public float distanciaParaAbrir = 3;
 	public Font Fonte;
 	public float VelocidadeDeGiro = 60;
@@ -29,6 +29,9 @@ public class PORTA : MonoBehaviour {
 		if (PrecisaDeChave == true) {
 			EstaTrancada = true;
 		}
+		PortaNormal = (AudioClip)Resources.Load ("porta_abrindo");
+		PortaTrancada = (AudioClip)Resources.Load ("porta_trancada");
+		SomDeChave = (AudioClip)Resources.Load("porta_destrancando");
 	}
 	void Update (){
 		// CHECAHDO SE ESTA PERTO OU NAO
@@ -39,19 +42,19 @@ public class PORTA : MonoBehaviour {
 		}
 		//CHECANDO SE ESTA TRANCADA OU NAO... SE NAO ESTIVER, PODE ABRIR
 		if (EstaTrancada == false) {
-			if(Input.GetKeyDown("e") && MovimentarPorta == true && PodeAbrir == true){
+			if((CustomInput.gatilhoJoystick() ||Input.GetKeyDown ("e")) && MovimentarPorta == true && PodeAbrir == true){
 				CronometroMovimento = 0;
 				EstaAberta = !EstaAberta;
 				GetComponent<AudioSource>().Stop ();
 				GetComponent<AudioSource>().PlayOneShot(PortaNormal);
 			}
-			else if(Input.GetKeyDown("e") && PodeAbrir == true && MovimentarPorta == false){
+			else if((CustomInput.gatilhoJoystick() ||Input.GetKeyDown ("e")) && PodeAbrir == true && MovimentarPorta == false){
 				GetComponent<AudioSource>().PlayOneShot(PortaNormal);
 				MovimentarPorta = true;
 			}
 		}
 		// SE A PORTA ESTIVER TRANCADA 
-		if (Input.GetKeyDown ("e") && PodeAbrir == true && EstaTrancada == true) {
+		if ((CustomInput.gatilhoJoystick() ||Input.GetKeyDown ("e")) && PodeAbrir == true && EstaTrancada == true) {
 			//CHECA SE O PALYER TEM A CHAVE OU NAO
 			for(int x = 0; x < ListaDeIDs.Count; x++){
 				if(IDdaPorta == ListaDeIDs[x]){
@@ -105,7 +108,7 @@ public class PORTA : MonoBehaviour {
 				CronometroNextLevel = 0;
 
 				int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-				if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
+				if ((SceneManager.sceneCountInBuildSettings > nextSceneIndex) && MudaDeCena)
 				{
 					SceneManager.LoadScene(nextSceneIndex);
 				}

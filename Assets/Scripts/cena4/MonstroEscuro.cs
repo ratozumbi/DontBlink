@@ -59,10 +59,26 @@ public class MonstroEscuro : MonoBehaviour {
 
 	}
 
+	public void MataComFogo(){
+		morrendo = true;
+		myAudioSource.PlayOneShot (listAudio [4]);
+		Destroy (this.gameObject, 5);
+		myLight.intensity = 8;
+		GameObject fire = Instantiate (Resources.Load ("Prefabs/fx_fire_g", typeof(GameObject)), transform,true) as GameObject; 
+		fire.transform.localPosition = new Vector3 (0, -0.23f, 0);
+		fire.transform.localScale = new Vector3 (3, 3, 3);
+		Invoke ("EndGame", 5f);
+	}
+
+	void EndGame(){
+		Application.Quit ();
+		return;
+	}
 
 	void Update () {
 		if (morrendo) {
-			meuGargula.transform.Translate(new Vector3(0,-1,0) *Time.smoothDeltaTime);
+			Para ();
+			meuGargula.transform.Translate(new Vector3(0,0,-1) *Time.smoothDeltaTime/3f);
 			return;
 		}
 		
@@ -140,7 +156,6 @@ public class MonstroEscuro : MonoBehaviour {
 		iluminado = iluminadoForce;
 	}
 
-
 	void OnTriggerStay(Collider col)
 	{
 		if (col.gameObject.tag == "Player") {
@@ -158,15 +173,6 @@ public class MonstroEscuro : MonoBehaviour {
 			if (anda)
 				MataPlayer ();
 		} 
-		if (col.gameObject.tag == "Finish" /*&& podeMorrer*/) {
-			myAudioSource.PlayOneShot (listAudio [4]);
-			morrendo = true;
-			Destroy (this.gameObject, 5);
-			GameObject fire = Instantiate (Resources.Load ("Prefabs/fx_fire_g", typeof(GameObject)), transform) as GameObject; 
-		} 
-		{
-			Debug.Log ("monstro colider" + col.gameObject.name);
-		}
 
 	}
 

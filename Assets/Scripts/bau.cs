@@ -23,7 +23,7 @@ public class bau : MonoBehaviour {
 		}
 		//CHECANDO SE ESTA TRANCADA OU NAO... SE NAO ESTIVER, PODE ABRIR
 
-		if(Input.GetKeyDown("e") && PodeAbrir == true && BauAberto == false){
+		if((CustomInput.gatilhoJoystick() ||Input.GetKeyDown ("e"))&& PodeAbrir == true && BauAberto == false){
 			GetComponent<Animator>().SetBool ("Abrir",true);
 			GetComponent<AudioSource>().PlayOneShot(Abrindo);
 			BauAberto = true;

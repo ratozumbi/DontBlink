@@ -37,12 +37,7 @@ public class triggerTocha : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (Input.GetKeyDown (KeyCode.JoystickButton0) ||
-			Input.GetKeyDown (KeyCode.JoystickButton1) ||
-			Input.GetKeyDown (KeyCode.JoystickButton2) ||
-			Input.GetKeyDown (KeyCode.JoystickButton3) ||
-			Input.GetKeyDown (KeyCode.JoystickButton4) ||
-			Input.GetKeyDown (KeyCode.JoystickButton5))
+		if (CustomInput.gatilhoJoystick())
 		{
 			GameObject tochaPlayer = GameObject.Find ("tochaPlayer");
 			if (!tochaPlayer)
