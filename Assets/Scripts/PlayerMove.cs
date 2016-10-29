@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour {
 
 	void Update ()
 	{
-		#if (!UNITY_STANDALONE_WIN && UNITY_EDITOR)
+		#if (!UNITY_STANDALONE_WIN && !UNITY_EDITOR)
 		//enquanto o player nao apertar para frente, não se mexe
 		//esses ifs serve pra mapear o controle caso esteja invertido
 		if (vertical == "") {

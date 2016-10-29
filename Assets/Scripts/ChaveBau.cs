@@ -14,12 +14,12 @@ public class ChaveBau : MonoBehaviour {
 	}
 	void Update () {
 		if (Vector3.Distance (transform.position, Jogador.transform.position) < DistanciaDaChave) {
-			if (Input.GetKeyDown ("e") && BauAberto) {
+			if ((CustomInput.gatilhoJoystick() || Input.GetKeyDown ("e")) && BauAberto) {
 				PORTA.ListaDeIDs.Add (IDdaChave);
 				GetComponent<MeshRenderer> ().enabled = false;
 				GetComponent<AudioSource> ().PlayOneShot (somChave);
 				Destroy (gameObject, 2.0f);
-			} else if (Input.GetKeyDown ("e") && BauAberto == false){
+			} else if ((CustomInput.gatilhoJoystick() || Input.GetKeyDown ("e")) && BauAberto == false){
 				BauAberto = true;	
 			}
 		}

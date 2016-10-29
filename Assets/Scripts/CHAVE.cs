@@ -20,6 +20,8 @@ public class CHAVE : MonoBehaviour{
 				GetComponent<MeshRenderer> ().enabled = false;
 				GetComponent<AudioSource> ().PlayOneShot (somChave);
 				Destroy (gameObject,2.0f);
+
+				GameObject.FindWithTag("Monstro").GetComponent<Monstro> ().enabled = true;
 			}
 		}
 	}

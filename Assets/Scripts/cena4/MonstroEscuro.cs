@@ -56,29 +56,34 @@ public class MonstroEscuro : MonoBehaviour {
 		listAudio [2] = (AudioClip)Resources.Load ("risadaLonga");
 		listAudio[3] = (AudioClip)Resources.Load("risadaMuitoDistorcida1");
 		listAudio[4] = (AudioClip)Resources.Load("risadaMuitoDistorcida2");
-		listAudio[5] = (AudioClip)Resources.Load("");
+		listAudio[5] = (AudioClip)Resources.Load("morte");
 
 	}
 
 	public void MataComFogo(){
 		morrendo = true;
 		myAudioSource.PlayOneShot (listAudio [4]);
-		Destroy (this.gameObject, 5);
+		contadorEstatico = 8;
 		myLight.intensity = 8;
 		GameObject fire = Instantiate (Resources.Load ("Prefabs/fx_fire_g", typeof(GameObject)), transform,true) as GameObject; 
 		fire.transform.localPosition = new Vector3 (0, -0.23f, 0);
 		fire.transform.localScale = new Vector3 (3, 3, 3);
-		Invoke ("EndGame", 5f);
+
 	}
 
 	void EndGame(){
+		Destroy (this.gameObject);
 		Application.Quit ();
-		return;
+
 	}
 
 	void Update () {
 		if (morrendo) {
 			Para ();
+			contadorEstatico -= Time.deltaTime;
+			if (contadorEstatico <= 0) {
+				EndGame ();
+			}
 			meuGargula.transform.Translate(new Vector3(0,0,-1) *Time.smoothDeltaTime/3f);
 			return;
 		}
@@ -160,7 +165,6 @@ public class MonstroEscuro : MonoBehaviour {
 	void OnTriggerStay(Collider col)
 	{
 		if (col.gameObject.tag == "Player") {
-			if (anda)
 				MataPlayer ();
 		} 
 	}

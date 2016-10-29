@@ -21,7 +21,7 @@ public class carta : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		distancia = Vector3.Distance (transform.position, jogador.transform.position);
-		if (distancia <= DistDaCarta && Input.GetKeyDown ("e")) {
+		if (distancia <= DistDaCarta && (CustomInput.gatilhoJoystick() || Input.GetKeyDown ("e"))) {
 			if (mostrarCarta == true) {
 				GetComponent<AudioSource> ().PlayOneShot (audioFolha);
 
