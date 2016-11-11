@@ -17,7 +17,7 @@ public class ProvedorDeLuz : MonoBehaviour {
 
 	public void sendCor(){
 		playerLuz.color = minhaLuz.color;
-		playerLuz.range++;
+		//playerLuz.range++;
 	}
 
 	void OnTriggerEnter(Collider other)
