@@ -23,6 +23,8 @@ public class Monstro : MonoBehaviour {
 	private float CronometroNextLevel;
 	public GameObject Player;
 
+	public bool anda = true;
+
 	void Start() {
 		camL = GameObject.FindGameObjectWithTag ("camL").GetComponent<Camera> ();
 		camR = GameObject.FindGameObjectWithTag ("camR").GetComponent<Camera> ();
@@ -63,23 +65,42 @@ public class Monstro : MonoBehaviour {
 
 		//calcula a rotacao da estatua
 		Vector3 lookPos = player.GetComponent<Transform>().position - transform.position;
-		Quaternion viradinhaMalandra = new Quaternion (0, -1, 0, 1);//isso esta aqui pq o look at acha que a lateral da estatua eh pra frente, dai compenso dando uam girada.
+		Quaternion viradinhaMalandra = new Quaternion (0, -1, 0, 1);//isso esta aqui pq o look at acha que a lateral da estatua eh pra frente, dai compenso dando uma girada.
 		lookPos.y = 0;
 		Quaternion rotation = Quaternion.LookRotation (lookPos) * viradinhaMalandra;
 
-		if (iluminado && myRenderer.isVisible && possivelVer) {//caso willRender e !possivelVer : vai ser possivel ver a sombra do bixo mexendo. Não sei se é uma feature ou bug.
-			myAgent.SetDestination (transform.position);
-			myAgent.Stop();
-			podeRodar = true;
-			gameObject.GetComponent<AudioSource>().Play();
-		} else {
-			myAgent.Resume();
-			if(podeRodar)
-				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, 1);
-			myAgent.SetDestination (player.transform.position);
-		}
+
+		if (iluminado && (myRenderer.isVisible && possivelVer)) {
+			anda = false;
+		} else
+			anda = true;
+
+		if (anda)
+			Move (rotation);
+		else
+			Para ();
+
+
+		anda = false;
 		possivelVer = false;
 		iluminado = iluminadoForce;
+	}
+
+	void Para(){
+		myAgent.SetDestination (transform.position);
+		myAgent.Stop();
+		podeRodar = true;
+		gameObject.GetComponent<AudioSource> ().Stop ();
+	}
+
+	void Move(Quaternion rotation){
+		if (!gameObject.GetComponent<AudioSource> ().isPlaying) {
+			gameObject.GetComponent<AudioSource>().Play();
+		}
+		myAgent.Resume();
+		if(podeRodar)
+			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, 1);
+		myAgent.SetDestination (player.transform.position);
 	}
 
 	void OnTriggerEnter(Collider col)
@@ -87,7 +108,7 @@ public class Monstro : MonoBehaviour {
 		if (col.gameObject.tag == "luz") {
 			iluminado = true;
 		}
-		if (col.gameObject.tag == "Player") {
+		if (col.gameObject.tag == "Player" && this.enabled) {
 			//if (!(iluminado || myRenderer.isVisible ||   possivelVer))
 			StartCoroutine(ReiniciaLevel());
 		}
@@ -97,7 +118,7 @@ public class Monstro : MonoBehaviour {
 		CharacterController cc = Player.GetComponent<CharacterController> ();
 		cc.enabled = false;
 
-		float fadetime = GameObject.Find ("_GM").GetComponent<fading> ().BeginFade (1);;
+		float fadetime = GameObject.Find ("_GM").GetComponent<fading> ().BeginFade (1);
 
 		GetComponent<AudioSource>().PlayOneShot(MorteDoPlayer);
 		yield return new WaitForSeconds(5);

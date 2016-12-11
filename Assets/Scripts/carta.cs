@@ -10,7 +10,7 @@ public class carta : MonoBehaviour {
 	private GameObject jogador;
 	public GameObject papel, estatua;
 	private float distancia;
-	private bool mostrarCarta;
+	public bool mostrarCarta;
 
 
 	void Start () {
@@ -25,8 +25,9 @@ public class carta : MonoBehaviour {
 			if (mostrarCarta == true) {
 				GetComponent<AudioSource> ().PlayOneShot (audioFolha);
 
+				estatua.GetComponent<Monstro> ().anda = false;
 				estatua.GetComponent<Monstro> ().enabled = false;
-				estatua.GetComponent<AudioSource> ().enabled = false;
+				//estatua.GetComponent<AudioSource> ().enabled = false;
 
 				papel.SetActive (true);
 				GetComponent<MeshRenderer> ().enabled = false;
@@ -45,6 +46,11 @@ public class carta : MonoBehaviour {
 				cc.enabled = true;
 			}
 		}
+
+		if (mostrarCarta == false) {
+			estatua.GetComponent<Monstro> ().anda = false;
+		}
+
 	}
 }
 

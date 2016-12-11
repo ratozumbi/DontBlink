@@ -21,7 +21,13 @@ public class CHAVE : MonoBehaviour{
 				GetComponent<AudioSource> ().PlayOneShot (somChave);
 				Destroy (gameObject,2.0f);
 
-				GameObject.FindWithTag("Monstro").GetComponent<Monstro> ().enabled = true;
+				if (GameObject.Find ("carta").GetComponent<carta> ().mostrarCarta == false) {
+					GameObject.FindWithTag ("Monstro").GetComponent<Monstro> ().anda = false;
+					GameObject.FindWithTag ("Monstro").GetComponent<Monstro> ().enabled = false;
+				} else {
+					GameObject.FindWithTag ("Monstro").GetComponent<Monstro> ().enabled = true;
+				}
+
 			}
 		}
 	}
