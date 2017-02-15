@@ -16,6 +16,10 @@ public class PORTA : MonoBehaviour {
 	private float CronometroDoAviso,CronometroMovimento,CronometroNextLevel;
 	private float RotacaoFechada,RotacaoAberta;
 	private GameObject Jogador;
+
+	private static int malandragemTerceiraPorta = 0;
+	private static int []lastPortaID = {-1,-1,-1};
+
 	void Start (){
 		EstaAberta = false;
 		AvisoTrancada = false;
@@ -56,11 +60,18 @@ public class PORTA : MonoBehaviour {
 		// SE A PORTA ESTIVER TRANCADA 
 		if ((CustomInput.gatilhoJoystick() ||Input.GetKeyDown ("e")) && PodeAbrir == true && EstaTrancada == true) {
 			//CHECA SE O PALYER TEM A CHAVE OU NAO
-			for(int x = 0; x < ListaDeIDs.Count; x++){
-				if(IDdaPorta == ListaDeIDs[x]){
+			for (int x = 0; x < ListaDeIDs.Count; x++) {
+				if (IDdaPorta == ListaDeIDs [x] || malandragemTerceiraPorta >= 3) {
 					temAChave = true;
-				}else{
+				} else {
 					temAChave = false;
+
+					if (CHAVE.PegouChave && !GetComponent<AudioSource> ().isPlaying && (IDdaPorta != lastPortaID [0] || IDdaPorta != lastPortaID [1] || IDdaPorta != lastPortaID [2])) {
+						if (malandragemTerceiraPorta < 2) {
+							lastPortaID [malandragemTerceiraPorta] = IDdaPorta;
+						}
+						malandragemTerceiraPorta++;
+					}
 				}
 			}
 			// SE O PALYER TEM A CHAVE

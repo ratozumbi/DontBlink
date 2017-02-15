@@ -10,7 +10,7 @@ public class carta : MonoBehaviour {
 	private GameObject jogador;
 	public GameObject papel, estatua;
 	private float distancia;
-	public bool mostrarCarta;
+	private bool mostrarCarta;
 
 
 	void Start () {
@@ -27,7 +27,9 @@ public class carta : MonoBehaviour {
 
 				estatua.GetComponent<Monstro> ().anda = false;
 				estatua.GetComponent<Monstro> ().enabled = false;
-				//estatua.GetComponent<AudioSource> ().enabled = false;
+				estatua.GetComponent<NavMeshAgent> ().enabled = false;
+				estatua.GetComponent<AudioSource> ().Stop();
+				estatua.GetComponent<AudioSource> ().enabled = false;
 
 				papel.SetActive (true);
 				GetComponent<MeshRenderer> ().enabled = false;
@@ -39,6 +41,8 @@ public class carta : MonoBehaviour {
 				GetComponent<MeshRenderer> ().enabled = true;
 
 				estatua.GetComponent<Monstro> ().enabled = true;
+				estatua.GetComponent<AudioSource> ().enabled = true;
+				estatua.GetComponent<NavMeshAgent> ().enabled = true;
 				estatua.GetComponent<AudioSource> ().enabled = true;
 
 				mostrarCarta = true;

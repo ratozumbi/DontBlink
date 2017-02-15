@@ -72,9 +72,12 @@ public class Monstro : MonoBehaviour {
 
 		if (iluminado && (myRenderer.isVisible && possivelVer)) {
 			anda = false;
-		} else
-			anda = true;
-
+		} else {
+			if (GameObject.Find ("carta").GetComponent<carta> ().isActiveAndEnabled || GameObject.Find ("carta").GetComponent<carta> ().isActiveAndEnabled)
+				anda = true;
+			else
+				anda = false;
+		}
 		if (anda)
 			Move (rotation);
 		else

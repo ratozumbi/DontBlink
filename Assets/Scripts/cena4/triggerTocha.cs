@@ -18,18 +18,9 @@ public class triggerTocha : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		
-		#if(OFF )
-
-		if (!jobDone && other.tag == "Player") {
-			jobDone = true;
-			GameObject tochaPlayer = GameObject.Find ("tochaPlayer");
-			if (!tochaPlayer)
-				Debug.Log ("nao encontrei a tocha no player");
-			else
-				tochaPlayer.transform.localPosition = new Vector3(0.453f,-0.069f,0.455f);
-			this.gameObject.SetActive (false);
-			Debug.Log ("done tocha");
-
+		#if(true)
+		{
+			actionTocha();
 		}
 
 		#endif
@@ -39,12 +30,19 @@ public class triggerTocha : MonoBehaviour {
 	{
 		if (CustomInput.gatilhoJoystick() || Input.GetKey(KeyCode.E))
 		{
-			GameObject tochaPlayer = GameObject.Find ("tochaPlayer");
-			if (!tochaPlayer)
-				Debug.Log ("nao encontrei a tocha no player");
-			else
-				tochaPlayer.transform.localPosition = new Vector3(0.453f,-0.069f,0.455f);
-			this.gameObject.SetActive (false);
+			actionTocha ();
 		}
+	}
+
+	void actionTocha(){
+
+		GameObject tochaPlayer = GameObject.Find ("tochaPlayer");
+		if (!tochaPlayer)
+			Debug.Log ("nao encontrei a tocha no player");
+		else
+			tochaPlayer.transform.localPosition = new Vector3(0.453f,-0.069f,0.455f);
+		this.gameObject.SetActive (false);
+
+		Destroy( GameObject.Find ("barreira"));
 	}
 }
