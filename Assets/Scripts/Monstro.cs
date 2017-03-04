@@ -22,6 +22,7 @@ public class Monstro : MonoBehaviour {
 
 	private float CronometroNextLevel;
 	public GameObject Player;
+	private GameObject objCarta;
 
 	public bool anda = true;
 
@@ -31,6 +32,7 @@ public class Monstro : MonoBehaviour {
 		myAgent = GetComponent<NavMeshAgent>();
 		myRenderer = GetComponent<Renderer> ();
 		player = GameObject.FindWithTag ("Player");
+		objCarta = GameObject.Find ("carta");
 	}
 
 
@@ -73,7 +75,7 @@ public class Monstro : MonoBehaviour {
 		if (iluminado && (myRenderer.isVisible && possivelVer)) {
 			anda = false;
 		} else {
-			if (GameObject.Find ("carta").GetComponent<carta> ().isActiveAndEnabled || GameObject.Find ("carta").GetComponent<carta> ().isActiveAndEnabled)
+			if ((objCarta.activeSelf))
 				anda = true;
 			else
 				anda = false;

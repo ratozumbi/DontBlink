@@ -15,7 +15,7 @@ public class SobePortao : MonoBehaviour {
 			}
 
 			transform.Translate(new Vector3(0,1,0) *Time.smoothDeltaTime);
-			if (transform.position.y > 1f)
+			if (!GetComponent<AudioSource>().isPlaying)
 				Destroy (this.gameObject);
 		}
 	}

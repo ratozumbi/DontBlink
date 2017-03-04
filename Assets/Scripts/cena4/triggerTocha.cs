@@ -42,7 +42,8 @@ public class triggerTocha : MonoBehaviour {
 		else
 			tochaPlayer.transform.localPosition = new Vector3(0.453f,-0.069f,0.455f);
 		this.gameObject.SetActive (false);
+		
+		GameObject.Find ("Portao0").GetComponent<SobePortao> ().ativar = true;
 
-		Destroy( GameObject.Find ("barreira"));
 	}
 }

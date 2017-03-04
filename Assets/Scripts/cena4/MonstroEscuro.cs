@@ -134,7 +134,7 @@ public class MonstroEscuro : MonoBehaviour {
 			if (Vector3.Distance (transform.position, player.transform.position) <= triggerDistance) {
 				luzPlayer.range --;
 				triggerDistance = luzPlayer.range;
-				if (triggerDistance < 2)
+				if (triggerDistance < 3)
 					MataPlayer ();
 				contadorEstatico = timerEstatico;
 				int rand = Random.Range (0, 5);

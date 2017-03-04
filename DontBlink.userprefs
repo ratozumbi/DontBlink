@@ -1,27 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PORTA.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\cena4\MonstroEscuro.cs">
     <Files>
-      <File FileName="Assets\Scripts\cena4\triggerTocha.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\cena4\ProvedorDeLuz.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\menu_inicial\seletor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Monstro.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\cena4\ReceptorDeLuz.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ChaveBau.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\cena4\MonstroEscuro.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\bau.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CustomInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\fading.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\winFPS.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CHAVE.cs" Line="10" Column="15" />
-      <File FileName="Assets\Scripts\PORTA.cs" Line="18" Column="14" />
+      <File FileName="Assets\Scripts\cena1intro\PlayerStart.cs" Line="39" Column="29" />
+      <File FileName="Assets\Scripts\PORTA.cs" Line="4" Column="1" />
+      <File FileName="Assets\Scripts\Monstro.cs" Line="32" Column="42" />
+      <File FileName="Assets\Scripts\Carta2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\carta.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\cena4\MonstroEscuro.cs" Line="137" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="D:\gamedev\DontBlink\Assets\Scripts\PORTA.cs" line="69" column="6" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
