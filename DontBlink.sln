@@ -1,11 +1,11 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{10E9526D-793E-18CA-C84A-378175CD95A5}") = "DontBlink", "Assembly-CSharp-firstpass.csproj", "{9F3117C1-D9E7-7FB3-7A70-6D9FDEBADF45}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontBlink", "Assembly-CSharp-firstpass.csproj", "{9F3117C1-D9E7-7FB3-7A70-6D9FDEBADF45}"
 EndProject
-Project("{10E9526D-793E-18CA-C84A-378175CD95A5}") = "DontBlink", "Assembly-CSharp.csproj", "{DFB7DE44-7224-3A6A-8D45-BF9D8B885E6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontBlink", "Assembly-CSharp.csproj", "{DFB7DE44-7224-3A6A-8D45-BF9D8B885E6A}"
 EndProject
-Project("{10E9526D-793E-18CA-C84A-378175CD95A5}") = "DontBlink", "Assembly-CSharp-Editor.csproj", "{E5DC94EF-95EA-3914-ACFF-D9544D263745}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontBlink", "Assembly-CSharp-Editor.csproj", "{E5DC94EF-95EA-3914-ACFF-D9544D263745}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

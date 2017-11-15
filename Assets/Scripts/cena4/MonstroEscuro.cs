@@ -36,12 +36,12 @@ public class MonstroEscuro : MonoBehaviour {
 	private AudioClip[] listAudio = new AudioClip[10];
 	private AudioSource myAudioSource;
 
-	private NavMeshAgent myAgent;
+	private UnityEngine.AI.NavMeshAgent myAgent;
 	private Renderer myRenderer;
 	void Start() {
 		camL = GameObject.FindGameObjectWithTag ("camL").GetComponent<Camera> ();
 		camR = GameObject.FindGameObjectWithTag ("camR").GetComponent<Camera> ();
-		myAgent = GetComponent<NavMeshAgent>();
+		myAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		myRenderer = GetComponent<Renderer> ();
 		player = GameObject.FindWithTag ("Player");
 		playerTocha = GameObject.FindWithTag ("TochaPlayer");

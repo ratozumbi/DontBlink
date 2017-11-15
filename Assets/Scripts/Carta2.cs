@@ -27,9 +27,9 @@ public class Carta2 : MonoBehaviour {
 
 				estatua.GetComponent<Monstro> ().enabled = false;
 				estatua.GetComponent<AudioSource> ().enabled = false;
-				estatua.GetComponent<NavMeshAgent> ().enabled = false;
+				estatua.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
 
-				estatua2.GetComponent<NavMeshAgent> ().enabled = false;
+				estatua2.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
 				estatua2.GetComponent<Monstro> ().enabled = false;
 				estatua2.GetComponent<AudioSource> ().enabled = false;
 
@@ -44,9 +44,9 @@ public class Carta2 : MonoBehaviour {
 
 				estatua.GetComponent<Monstro> ().enabled = true;
 				estatua.GetComponent<AudioSource> ().enabled = true;
-				estatua.GetComponent<NavMeshAgent> ().enabled = true;
+				estatua.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 
-				estatua2.GetComponent<NavMeshAgent> ().enabled = true;
+				estatua2.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 				estatua2.GetComponent<Monstro> ().enabled = true;
 				estatua2.GetComponent<AudioSource> ().enabled = true;
 

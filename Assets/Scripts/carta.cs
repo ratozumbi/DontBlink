@@ -27,7 +27,7 @@ public class carta : MonoBehaviour {
 
 				estatua.GetComponent<Monstro> ().anda = false;
 				estatua.GetComponent<Monstro> ().enabled = false;
-				estatua.GetComponent<NavMeshAgent> ().enabled = false;
+				estatua.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
 				estatua.GetComponent<AudioSource> ().Stop();
 				estatua.GetComponent<AudioSource> ().enabled = false;
 
@@ -42,7 +42,7 @@ public class carta : MonoBehaviour {
 
 				estatua.GetComponent<Monstro> ().enabled = true;
 				estatua.GetComponent<AudioSource> ().enabled = true;
-				estatua.GetComponent<NavMeshAgent> ().enabled = true;
+				estatua.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 				estatua.GetComponent<AudioSource> ().enabled = true;
 
 				mostrarCarta = true;

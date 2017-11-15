@@ -34,7 +34,7 @@ public class LightProbePlacement : EditorWindow {
 
 				probe.transform.position = Vector3.zero;
 
-				NavMeshTriangulation navMesh = NavMesh.CalculateTriangulation ();
+				UnityEngine.AI.NavMeshTriangulation navMesh = UnityEngine.AI.NavMesh.CalculateTriangulation ();
 
 
 				current = "Generating necessary lists...";

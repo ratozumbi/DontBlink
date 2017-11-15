@@ -190,11 +190,6 @@ public class StereoController : MonoBehaviour {
     if (Head == null) {
       gameObject.AddComponent<CardboardHead>();
     }
-#if !UNITY_5
-    if (GetComponent<Camera>().tag == "MainCamera" && GetComponent<SkyboxMesh>() == null) {
-      gameObject.AddComponent<SkyboxMesh>();
-    }
-#endif
   }
 
   // Helper routine for creation of a stereo eye.
@@ -203,14 +198,6 @@ public class StereoController : MonoBehaviour {
     GameObject go = new GameObject(nm);
     go.transform.parent = transform;
     go.AddComponent<Camera>().enabled = false;
-#if !UNITY_5
-    if (GetComponent<GUILayer>() != null) {
-      go.AddComponent<GUILayer>();
-    }
-    if (GetComponent("FlareLayer") != null) {
-      go.AddComponent("FlareLayer");
-    }
-#endif
     var cardboardEye = go.AddComponent<CardboardEye>();
     cardboardEye.eye = eye;
     cardboardEye.CopyCameraAndMakeSideBySide(this);

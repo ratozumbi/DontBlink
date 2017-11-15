@@ -15,7 +15,7 @@ public class Monstro : MonoBehaviour {
 	private Camera camL;
 	private Camera camR;
 
-	private NavMeshAgent myAgent;
+	private UnityEngine.AI.NavMeshAgent myAgent;
 	private Renderer myRenderer;
 
 	public AudioClip PertoDoPlayer, MorteDoPlayer;
@@ -29,7 +29,7 @@ public class Monstro : MonoBehaviour {
 	void Start() {
 		camL = GameObject.FindGameObjectWithTag ("camL").GetComponent<Camera> ();
 		camR = GameObject.FindGameObjectWithTag ("camR").GetComponent<Camera> ();
-		myAgent = GetComponent<NavMeshAgent>();
+		myAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		myRenderer = GetComponent<Renderer> ();
 		player = GameObject.FindWithTag ("Player");
 		objCarta = GameObject.Find ("carta");
